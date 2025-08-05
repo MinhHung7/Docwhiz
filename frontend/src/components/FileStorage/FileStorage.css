@@ -1,0 +1,513 @@
+.file-storage {
+  height: 50%;
+  /* background-color: #22262b; */
+  background-color: #262626;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+
+  /* Thêm flexbox để kiểm soát layout */
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 0px;
+}
+
+.add-file-btn {
+  display: flex;
+  align-items: center; /* Canh giữa theo chiều dọc */
+  justify-content: center; /* Canh giữa theo chiều ngang */
+  gap: 8px; /* Khoảng cách giữa icon và text */
+  /* background-color: #393943; */
+  background-color: rgba(30, 30, 30, 0.65);
+  color: white;
+  /* border: none; */
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 10px 14px;
+  margin-bottom: 1px;
+  width: 100%;
+  font-size: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+
+  -webkit-tap-highlight-color: transparent;
+
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.add-file-icon {
+  font-size: 25px; /* điều chỉnh kích thước icon */
+}
+
+.add-file-btn:hover {
+  background-color: #2f3338;
+  transform: translateY(-2px);
+}
+
+.add-file-btn:active {
+  transform: scale(0.98);
+  background-color: #2f3338;
+}
+
+.file-title {
+  display: flex;
+  align-items: center;
+  /* margin: 12px 0 8px; */
+  gap: 6px;
+  /* font-family: sans-serif; */
+  /* font-family: "Segoe UI", sans-serif; */
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+
+  color: #ddd;
+}
+
+.pdf-icon {
+  font-size: 18px;
+}
+
+.file-list {
+  display: flex;
+  flex-direction: column;
+  flex: 0.9; /* Chiếm toàn bộ không gian còn lại */
+  overflow-y: auto; /* nếu nội dung quá nhiều thì scroll */
+  min-height: 50px;
+}
+
+.file-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.file-list::-webkit-scrollbar-thumb {
+  background-color: rgba(217, 217, 217, 0.2);
+  border-radius: 4px;
+}
+
+.file-card {
+  display: flex;
+  justify-content: space-between; /* đẩy phần dot sang phải */
+  align-items: center;
+  border-radius: 10px;
+  transition: background 0.2s ease;
+}
+
+.dot-vertical {
+  color: #ccc;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 4px;
+  border: none;
+  background-color: transparent;
+}
+
+.dot-vertical:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+.file-btn {
+  width: 90%;
+  background-color: transparent;
+  border: none;
+  border-radius: 10px;
+  padding: 11px;
+  color: white;
+  font-size: 15px;
+  text-align: left;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 0;
+}
+
+.file-btn:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.button-row {
+  display: flex;
+  gap: 5px;
+  justify-content: flex-start; /* hoặc center/right tùy layout */
+}
+
+.add-note-btn,
+.add-mindmap-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 8px;
+  /* background-color: #2f3338; */
+  /* border: 1px solid #444; */
+  background-color: rgba(30, 30, 30, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #f0f0f0;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+  /* font-family: "Segoe UI", sans-serif; */
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+.add-note-btn:hover,
+.add-mindmap-btn:hover {
+  background-color: #3c4045;
+  transform: translateY(-2px);
+}
+
+.add-note-icon,
+.add-mindmap-icon {
+  font-size: 18px;
+  color: #f0f0f0;
+}
+
+.dot-wrapper {
+  position: relative;
+}
+
+.context-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #2c2f36;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  padding: 6px 0;
+  z-index: 100;
+  min-width: 120px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.context-menu-item {
+  padding: 8px 12px;
+  color: white;
+  font-size: 14px;
+  /* font-family: sans-serif; */
+  /* font-family: "Segoe UI", sans-serif; */
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.context-menu-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.rename-input {
+  padding: 6px 10px;
+  font-size: 14px;
+  width: 100%;
+  border: 1px solid #555;
+  border-radius: 5px;
+  background-color: #2c2c2c;
+  color: white;
+}
+
+/* FileStorage.css */
+.loader {
+  border: 4px solid #2c2f36;
+  border-top: 4px solid #4fc3f7;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  animation: spin 1s linear infinite;
+  margin: 10px auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Skeleton styles */
+.skeleton-card {
+  background-color: #43464b;
+  border-radius: 8px;
+  height: 50px;
+  margin-bottom: 5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.skeleton {
+  background-color: transparent;
+  height: 40px;
+  width: 100%;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.skeleton::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150px;
+  height: 100%;
+  width: 150px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    #393c41 50%,
+    transparent 100%
+  );
+  animation: shimmer 1.2s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(300px);
+  }
+}
+
+.upload-loader {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  gap: 10px;
+  color: #555;
+  font-size: 14px;
+}
+
+.mindmap-options-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(30, 30, 30, 0.65);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.mindmap-options-content {
+  /* background: linear-gradient(135deg, #ffffff, #f7fafd); */
+  background: #22262b;
+  padding: 32px 28px;
+  border-radius: 16px;
+  width: 95%;
+  max-width: 500px;
+  /* box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); */
+  animation: slideUpMindmap 0.3s ease-out;
+  /* font-family: "Segoe UI", sans-serif; */
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+@keyframes slideUpMindmap {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.mindmap-options-content h3 {
+  font-size: 22px;
+  /* margin-bottom: 20px; */
+  color: #dfe1e5;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  /* gap: 5px; */
+}
+
+.mindmap-options-content p {
+  font-size: 15px;
+  margin-bottom: 20px;
+  color: #dfe1e5;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mindmap-options-content label {
+  display: block;
+  margin-bottom: 18px;
+  color: #dfe1e5;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.mindmap-options-content select {
+  width: 100%;
+  margin-top: 6px;
+  padding: 10px 12px;
+  border: 1px solid #d0d7de;
+  border-radius: 8px;
+  font-size: 14px;
+  background: #22262b;
+  transition: border-color 0.2s ease;
+  color: #dfe1e5;
+}
+
+.mindmap-options-content select:focus {
+  border-color: #436288;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(92, 157, 237, 0.25);
+}
+
+.mindmap-options-content button {
+  padding: 10px 16px;
+  font-size: 14px;
+  margin-top: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+  font-weight: 500;
+  border: none;
+}
+
+.mindmap-options-content button:hover {
+  transform: translateY(-1px);
+}
+
+.mindmap-options-content button:first-of-type {
+  background: #2ecc71;
+  color: white;
+  margin-right: 10px;
+}
+
+.mindmap-options-content button:first-of-type:hover {
+  background: #27ae60;
+}
+
+.mindmap-options-content button:last-of-type {
+  background: #ecf0f1;
+  color: #2c3e50;
+}
+
+.mindmap-options-content button:last-of-type:hover {
+  background: #dce2e6;
+}
+
+.note-options-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(30, 30, 30, 0.65);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.note-options-content {
+  /* background: linear-gradient(135deg, #ffffff, #f7fafd); */
+  background: #22262b;
+  padding: 32px 28px;
+  border-radius: 16px;
+  width: 95%;
+  max-width: 500px;
+  /* box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); */
+  animation: slideUpNote 0.3s ease-out;
+  /* font-family: "Segoe UI", sans-serif; */
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+@keyframes slideUpNote {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.note-options-content h3 {
+  font-size: 22px;
+  /* margin-bottom: 20px; */
+  color: #dfe1e5;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  /* gap: 5px; */
+}
+
+.note-options-content p {
+  font-size: 15px;
+  margin-bottom: 20px;
+  color: #dfe1e5;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.note-options-content label {
+  display: block;
+  margin-bottom: 18px;
+  color: #dfe1e5;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.note-options-content select {
+  width: 100%;
+  margin-top: 6px;
+  padding: 10px 12px;
+  border: 1px solid #d0d7de;
+  border-radius: 8px;
+  font-size: 14px;
+  background: #22262b;
+  transition: border-color 0.2s ease;
+  color: #dfe1e5;
+}
+
+.note-options-content select:focus {
+  border-color: #436288;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(92, 157, 237, 0.25);
+}
+
+.note-options-content button {
+  padding: 10px 16px;
+  font-size: 14px;
+  margin-top: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+  font-weight: 500;
+  border: none;
+}
+
+.note-options-content button:hover {
+  transform: translateY(-1px);
+}
+
+.note-options-content button:first-of-type {
+  background: #2ecc71;
+  color: white;
+  margin-right: 10px;
+}
+
+.note-options-content button:first-of-type:hover {
+  background: #27ae60;
+}
+
+.note-options-content button:last-of-type {
+  background: #ecf0f1;
+  color: #2c3e50;
+}
+
+.note-options-content button:last-of-type:hover {
+  background: #dce2e6;
+}

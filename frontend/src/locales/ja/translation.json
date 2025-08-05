@@ -1,0 +1,57 @@
+{
+  "home": "ホーム",
+  "logout": "ログアウト",
+
+  "new_conversation": "新しい会話",
+  "search_conversation": "会話を検索",
+  "recent_conversations": "最近の会話",
+  "new_chat": "新しいチャット",
+  "rename": "名前を変更",
+  "delete": "削除",
+
+  "default_prompt": "何について質問したいですか？",
+  "default_response": "こんにちは！どのようにお手伝いできますか？",
+  "create_note": "ノートを作成",
+  "sorry_response": "申し訳ありませんが、ご質問に対する答えが見つかりませんでした。",
+  "error_response": "エラーが発生しました。しばらくしてからもう一度お試しください。",
+  "read": "読む",
+
+  "add_file": "ファイルを追加",
+  "pdf_list": "利用可能なPDFファイル",
+  "uploading": "アップロード中...",
+  "note_options": "ノートオプション",
+  "note_slogan": "あなたらしいノートを – 簡潔で、賢く、パーソナライズされた形で",
+  "note_source_file": "元ファイル",
+  "note_title": "ノートのタイトル",
+  "note_title_input": "ノートのタイトルを入力してください",
+  "note_target": "目的",
+
+  "study": "学習と記憶のために内容を整理する",
+  "work": "実用的な洞察とビジネスに役立つ情報を抽出する",
+  "research": "学術的な厳密さと詳細な分析を保持する",
+  "presentation": "プレゼンテーションに適した内容を作成する",
+  "quick_reference": "すばやく参照できる資料を作成する",
+  "general": "バランスの取れた包括的な概要を提供する",
+
+  "language": "言語",
+  "auto": "ファイルと同じ",
+
+  "level_of_detail": "詳細レベル",
+  "brief": "最も重要なポイントと主な結論のみを抽出する",
+  "moderate": "主要なアイデア、補足情報、重要な例を含める",
+  "detailed": "包括的な情報と詳細な説明を保持する",
+  "comprehensive": "冗長性のみを取り除き、ほぼすべての重要な情報を維持する",
+
+  "custom_note": "カスタムノート",
+  "custom_mindmap": "カスタムマインドマップ",
+  "mindmapnote_list": "利用可能なノートとマインドマップ",
+  "content_summary": "コンテンツの要約",
+  "content_note": "ノートの内容",
+
+  "edit": "編集",
+  "preview": "プレビュー",
+  "copy": "コピー",
+  "copied": "コピーしました",
+  "save": "保存",
+  "cancel": "キャンセル"
+}

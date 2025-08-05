@@ -1,0 +1,67 @@
+{
+  "home": "Home",
+  "logout": "Logout",
+
+  "new_conversation": "New Conversation",
+  "search_conversation": "Search Conversation",
+  "recent_conversations": "Recent Conversations",
+  "new_chat": "New chat",
+  "rename": "Rename",
+  "delete": "Delete",
+
+  "default_prompt": "What would you like to ask about?",
+  "default_response": "Hello! How may I assist you today?",
+  "create_note": "Create note",
+  "sorry_response": "Sorry, I couldn't find an answer to your question.",
+  "error_response": "An error occurred. Please try again later.",
+  "read": "Read",
+
+  "add_file": "Add file",
+  "pdf_list": "Available PDF Files",
+  "uploading": "Uploading...",
+
+  "note_options": "Note Options",
+  "note_slogan": "Notes your way – Concise, intelligent, and personalized",
+  "note_source_file": "Source",
+  "note_title": "Note title",
+  "note_title_input": "Please enter a title for your note",
+  "note_target": "Target",
+
+  "mindmap_options": "Mindmap Options",
+  "mindmap_slogan": "Visualize your thinking, organize your ideas.",
+  "mindmap_source_file": "Source",
+  "mindmap_title": "Mindmap title",
+  "mindmap_title_input": "Please enter a title for your mindmap",
+  "mindmap_target": "Target",
+  "mindmap_layout_style": "Layout style",
+  "create_mindmap": "Create mindmap",
+
+  "study": "Organize content for learning and retention",
+  "work": "Extract actionable insights and key business information",
+  "research": "Preserve academic rigor and detailed analysis",
+  "presentation": "Create content suitable for oral presentation",
+  "quick_reference": "Create easily scannable reference material",
+  "general": "Provide balanced comprehensive overview",
+
+  "language": "Language",
+  "auto": "Same as your file",
+
+  "level_of_detail": "Level of detail",
+  "brief": "Extract only the most essential points and key conclusions",
+  "moderate": "Include main ideas, supporting details, and important examples",
+  "detailed": "Preserve comprehensive information, detailed explanations",
+  "comprehensive": "Maintain almost all important information while removing only redundancy",
+
+  "custom_note": "Custom note",
+  "custom_mindmap": "Custom mindmap",
+  "mindmapnote_list": "Available Notes and Mindmaps",
+  "content_summary": "Content Summary",
+  "content_note": "Content Note",
+
+  "edit": "Edit",
+  "preview": "Preview",
+  "copy": "Copy",
+  "copied": "Copied",
+  "save": "Save",
+  "cancel": "Cancel"
+}

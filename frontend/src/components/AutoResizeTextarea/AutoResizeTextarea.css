@@ -1,0 +1,29 @@
+.auto-textarea {
+  flex: 1;
+  font-family: "Arial", sans-serif;
+  resize: none;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  background: #556a72;
+  color: white;
+  min-height: 40px;
+  max-height: 200px;
+  border-radius: 12px;
+  overflow-y: auto;
+}
+
+.auto-textarea::placeholder {
+  color: #d1cece;
+  opacity: 1;
+}
+
+.auto-textarea::-webkit-scrollbar {
+  width: 8px;
+}
+
+.auto-textarea::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}

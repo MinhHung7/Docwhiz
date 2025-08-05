@@ -1,0 +1,99 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  /* background: linear-gradient(to right, #2c2c2e, #3b3f4b); */
+  background: #0e0e0e;
+  color: white;
+  font-family: "Inria Sans", sans-serif;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center; /* Căn giữa theo chiều dọc */
+  gap: 10px; /* Khoảng cách giữa logo và chữ */
+}
+
+.logo-img {
+  height: 70px; /* hoặc chỉnh theo kích thước bạn muốn */
+  width: auto;
+}
+
+.logo-text {
+  font-size: 25px;
+  font-weight: bold;
+  color: #8b70f6;
+}
+
+.nav {
+  display: flex;
+  gap: 40px;
+  margin-right: 30px;
+}
+
+.link {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.body {
+  flex: 1;
+  display: flex;
+}
+
+.left {
+  flex: 1;
+  padding-left: 60px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* align-items: flex-start; */
+  padding-top: 100px;
+  text-align: left;
+  /* gap: 2px; */
+}
+
+.left h2,
+.left p,
+.left .slogan,
+.left button {
+  margin: 0px;
+  padding: 0;
+}
+
+.left h2 {
+  display: inline-block; /* Quan trọng: tránh h2 chiếm cả dòng */
+  background: linear-gradient(to right, #5f2c82, #49a09d);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 15px;
+}
+
+.left p {
+  font-size: 30px;
+}
+
+.right {
+  flex: 1;
+  /* Bạn có thể thêm hình minh hoạ tại đây */
+}
+
+.button {
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #fff;
+  color: #444;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}

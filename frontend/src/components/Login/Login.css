@@ -1,0 +1,234 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+body {
+  width: 100%;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  background-color: #0e0e0e;
+  color: white;
+  position: relative;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+
+.container {
+  width: 100vw;
+  max-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  text-align: center;
+  z-index: 1;
+  position: relative;
+}
+
+.hero-logo {
+  display: flex;
+  align-items: center; /* 🔥 Logo và chữ thẳng hàng theo chiều ngang */
+  justify-content: center; /* 🔥 Căn giữa toàn bộ block */
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.logo {
+  height: 130px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.1));
+}
+
+.hero-logo .logo-text {
+  font-size: 4rem !important;
+  font-weight: 800;
+  background: linear-gradient(270deg, #00ffe1, #8a2be2, #ff69b4);
+  background-size: 600% 600%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 8s ease infinite;
+  white-space: nowrap;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.headline {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  max-width: 700px;
+  line-height: 1.2;
+}
+
+.subheadline {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #ccc;
+  max-width: 550px;
+  margin-bottom: 2rem;
+}
+
+.features {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.feature-item {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  color: #eee;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.signup-button {
+  padding: 0.85rem 2rem;
+  background-color: white;
+  color: #0e0e0e;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.08);
+  margin-bottom: 2rem;
+}
+
+.signup-button:hover {
+  background-color: #f0f0f0;
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.15);
+}
+
+footer {
+  font-size: 0.85rem;
+  color: #666;
+  text-align: center;
+  padding-bottom: 1rem;
+  z-index: 1;
+}
+
+/* Background Effects */
+.glow {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #00ffe1 0%, transparent 70%);
+  filter: blur(120px);
+  opacity: 0.3;
+  z-index: 0;
+  animation: pulse 5s ease-in-out infinite;
+}
+
+.glow.left {
+  top: 10%;
+  left: 10%;
+}
+
+.glow.right {
+  top: 10%;
+  right: 10%;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.5;
+  }
+}
+
+.stars {
+  position: absolute;
+  width: 100%;
+  background-image: radial-gradient(white 0.5px, transparent 0.5px);
+  background-size: 40px 40px;
+  opacity: 0.03;
+  z-index: 0;
+}
+
+@media (max-height: 700px) {
+  .container {
+    scale: 0.95;
+  }
+}
+
+.feature-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.feature-image img {
+  max-width: 750px;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.05);
+}
+
+.feature-description {
+  max-width: 550px;
+}
+
+.feature-description h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.feature-description p {
+  font-size: 1.05rem;
+  color: #ccc;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}

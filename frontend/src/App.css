@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  font-family: sans-serif;
+}
+
+.frame {
+  width: 100vw;
+  height: 100vh;
+  background: #37383b;
+  color: white;
+  overflow: hidden;
+}
+
+.content {
+  padding-top: 60px;
+  height: calc(100vh - 60px);
+}
+
+.layout {
+  display: flex;
+  height: 100%;
+}
+
+.extra {
+  /* flex: 1; */
+  width: 280px;
+  flex-shrink: 0;
+  background-color: #37383b;
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* khoảng cách giữa 2 block */
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

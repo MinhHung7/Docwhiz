@@ -1,0 +1,333 @@
+.mindmap-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* Hộp mindmap ở giữa màn hình */
+.mindmap-container {
+  width: 90vw;
+  height: 90vh;
+  background-color: #1e1e2f;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Nút đóng */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+}
+
+/* Toolbar ở trên cùng */
+.toolbar {
+  padding: 12px 20px;
+  background-color: #2c2f48;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Nút điều khiển trong toolbar */
+.controls .btn {
+  margin-left: 10px;
+  padding: 6px 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Canvas để vẽ mindmap */
+.mindmap-canvas {
+  flex: 1;
+  background: #22262b;
+  position: relative;
+}
+
+/* Các phần tử phụ khác */
+.input-area {
+  padding: 10px;
+  background: #25273a;
+}
+
+.input-area textarea {
+  width: 100%;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  resize: none;
+}
+
+.zoom-controls {
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.zoom-btn {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 6px 10px;
+  color: white;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.tooltip {
+  position: absolute;
+  background: #333;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  pointer-events: none;
+  font-size: 12px;
+  z-index: 100;
+}
+
+.content-card {
+  position: absolute;
+  background: #202234;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  max-width: 300px;
+  display: none;
+  z-index: 200;
+}
+
+#mindmap {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  margin: 0 20px 20px 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.node {
+  cursor: pointer;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.node circle {
+  fill: #ffffff;
+  stroke: #4a90e2;
+  stroke-width: 2px;
+  transition: all 0.3s ease;
+}
+
+.node:hover circle {
+  fill: #4a90e2;
+  stroke: #ffffff;
+  stroke-width: 3px;
+  transform: scale(1.1);
+}
+
+.node text {
+  font-size: 14px;
+  font-weight: 500;
+  fill: #333;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  pointer-events: none;
+}
+
+.node:hover text {
+  fill: white;
+  font-weight: 600;
+}
+
+.link {
+  fill: none;
+  stroke: #4a90e2;
+  stroke-width: 2px;
+  stroke-opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.link:hover {
+  stroke-width: 3px;
+  stroke-opacity: 1;
+}
+
+.node--root circle {
+  fill: #ff6b6b;
+  stroke: #ff4757;
+  stroke-width: 3px;
+}
+
+.node--root text {
+  font-size: 16px;
+  font-weight: 700;
+  fill: white;
+}
+
+.node--collapsed circle {
+  fill: #ffa726;
+  stroke: #ff9800;
+}
+
+.node--collapsed text {
+  fill: white;
+  font-weight: 600;
+}
+
+.tooltip {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 12px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
+.zoom-controls {
+  position: absolute;
+  top: 80px;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 1000;
+}
+
+.zoom-settings {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 200px;
+}
+
+.zoom-settings label {
+  color: white;
+  font-size: 12px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.zoom-settings input[type="range"] {
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.zoom-settings input[type="number"] {
+  width: 60px;
+  padding: 2px 5px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 12px;
+}
+
+.zoom-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.zoom-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 18px;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.loading {
+  animation: pulse 1.5s infinite;
+}
+
+.content-card {
+  position: absolute;
+  max-width: 300px;
+  max-height: 60vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: rgba(255, 255, 255, 0.95);
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  font-size: 14px;
+  line-height: 1.4;
+  display: none;
+  z-index: 1001;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.content-card h3 {
+  margin-top: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.content-card p {
+  margin: 0;
+  font-size: 14px;
+}

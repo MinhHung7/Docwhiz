@@ -1,0 +1,67 @@
+{
+  "home": "Trang chủ",
+  "logout": "Đăng xuất",
+
+  "new_conversation": "Đoạn chat mới",
+  "search_conversation": "Tìm kiếm đoạn chat",
+  "recent_conversations": "Các cuộc trò chuyện gần đây",
+  "new_chat": "Cuộc trò chuyện mới",
+  "rename": "Sửa tên",
+  "delete": "Xóa",
+
+  "default_prompt": "Hỏi bất kì điều gì",
+  "default_response": "Xin chào! Tôi có thể giúp gì cho bạn?",
+  "create_note": "Tạo ghi chú",
+  "sorry_response": "Xin lỗi, tôi không thể trả lời câu hỏi này.",
+  "error_response": "Đã xảy ra lỗi. Vui lòng thử lại sau.",
+  "read": "Đọc to",
+
+  "add_file": "Thêm tệp tin",
+  "pdf_list": "Các tệp tin PDF có sẵn",
+  "uploading": "Đang tải...",
+
+  "note_options": "Điều chỉnh ghi chú",
+  "note_slogan": "Ghi chú theo cách của bạn – Ngắn gọn, thông minh và cá nhân hóa",
+  "note_source_file": "Nguồn",
+  "note_title": "Tiêu đề",
+  "note_title_input": "Vui lòng nhập tiêu đề cho ghi chú",
+  "note_target": "Mục tiêu",
+
+  "mindmap_options": "Điều chỉnh sơ đồ tư duy",
+  "mindmap_slogan": "Trực quan hóa suy nhĩ, tổ chức ý tưởng hiệu quả",
+  "mindmap_source_file": "Nguồn",
+  "mindmap_title": "Tiêu đề",
+  "mindmap_title_input": "Vui lòng nhập tiêu đề cho sơ đồ tư duy",
+  "mindmap_target": "Mục tiêu",
+  "mindmap_layout_style": "Kiểu bố cục",
+  "create_mindmap": "Tạo",
+
+  "study": "Tổ chức nội dung để học và ghi nhớ hiệu quả",
+  "work": "Rút trích thông tin quan trọng và từ khóa",
+  "research": "Giữ nguyên tính học thuật và phân tích chi tiết",
+  "presentation": "Tạo nội dung phù hợp để thuyết trình",
+  "quick_reference": "Tạo tài liệu tham khảo nhanh, dễ lướt qua",
+  "general": "Cung cấp cái nhìn tổng quan đầy đủ, dễ hiểu",
+
+  "language": "Ngôn ngữ",
+  "auto": "Ngôn ngữ dựa trên file",
+
+  "level_of_detail": "Mức độ chi tiết",
+  "brief": "Chỉ trích xuất những điểm thiết yếu và kết luận chính",
+  "moderate": "Bao gồm ý chính, chi tiết hỗ trợ và ví dụ quan trọng",
+  "detailed": "Giữ lại thông tin đầy đủ cùng với các giải thích chi tiết",
+  "comprehensive": "Bảo toàn gần như toàn bộ thông tin quan trọng, chỉ loại bỏ nội dung lặp lại",
+
+  "custom_note": "Ghi chú tùy chỉnh",
+  "custom_mindmap": "Sơ đồ tư duy tùy chỉnh",
+  "mindmapnote_list": "Các ghi chú và sơ đồ tư duy có sẵn",
+  "content_summary": "Tóm tắt nội dung",
+  "content_note": "Nội dung ghi chú",
+
+  "edit": "Chỉnh sửa",
+  "preview": "Xem trước",
+  "copy": "Sao chép",
+  "copied": "Đã sao chép",
+  "save": "Lưu",
+  "cancel": "Hủy"
+}

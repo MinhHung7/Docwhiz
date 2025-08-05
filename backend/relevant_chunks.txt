@@ -1,0 +1,646 @@
+Query: trong 2 cách xây dựng MKGs, cách nào tốt nhất
+
+=== File: 3_Multi-modal-knowledge-graphs-representation-learning-via-multi-headed-self-attention.pdf ===
+
+--- Chunk 1 ---
+, because the Mean
+Rank index does not have too strict requirements on the experimental
+results, as long as the degree of model overfitting is not large, the value
+of Mean Rank remains unaffected. From this viewpoint, Hits@10 can
+also reflect the degree of overfitting of the model to a certain extent.
+5.3.2. Optimal value of 𝜎
+In this section, we will first explain some of the reasons for intro-
+ducing the hyperparameter 𝜎. This is because the introduction of 𝜎isInformation Fusion 88 (2022) 78–85
+84E. Wang et al.
+Table 2
+Comparison of TransE and TransH before and after fusion of MKGRL-MS.
+Dataset FB15K CCR
+Metric Mean Rank Hits@10 Mean Rank Hits@10
+Raw Filt Raw Filt Raw Filt Raw Filt
+TransE 348 271 9.4 16.6 2299 2297 51.2 53.9
+MKGRL-MS(TransE) 338 261 9.1 16.2 2042 2040 31.9 33
+TransH 370 294 10.1 16.7 2248 2247 52.2 54.7
+MKGRL-MS(TransH) 356 279 9.4 15.5 2074 2073 31.6 32.6
+Fig. 3. Comparison chart of MKGRL-MS (TransE) results under different 𝜎values.
+Table 3
+E/T value for datasets FB15K and CCR.
+Datasets FB15K CCR
+Entities 14 951 71 234
+Train 483 142 86 679
+E/T 0.03 0.82
+directly related to the results presented in Section 5.3.1 . Later, we will
+analyse the experimental results obtained under different values of 𝜎.
+The main reason for introducing hyperparameter 𝜎is that we have
+some doubts about the preliminary experiment, mainly due to the
+following two points:
+•Although MKGRL-MS has achieved a certain degree of decline in
+Mean Rank, the decline is not too large. We speculate that this is
+caused by certain random factors.
+•Although we explained the two points of attention mentioned in
+Section 5.3.1 , more experiments need to be conducted to confirm
+our explanation.
+Meanwhile, the entity in a correct triplet is not entirely related
+to its own multi-modal characteristics, and there should be an appro-
+priate ratio. Based on this, we introduce the hyperparameter 𝜎and
+conduct more experiments under different values to further verify the
+effectiveness of MKGRL-MS. The experimental results are shown in
+Table 4:
+The table clearly shows that whether it is Mean Rank or Hits@10,
+when the hyperparameter 𝜎takes different values, the difference be-
+tween the results of Filt and Raw is not evident, which further confirms
+that our analysis and interpretation of the dataset in Section 5.3.1 .
+Through the line charts shown in Fig. 3, the following two findings
+are drawn:Table 4
+Influence of hyperparameter 𝜎on MKGRL-MS (TransE) under different values.
+Dataset CCR
+Metric Mean Rank Hits@10
+Raw Filt Raw Filt
+𝜎= 0.0 2255 2253 51.1 53.6
+𝜎= 0.1 1846 1844 53.6 56.2
+𝜎= 0.2 1805 1803 50.9 53.2
+𝜎= 0.3 1632 1631 47.6 49.9
+𝜎= 0.4 1579 1577 46.4 48.4
+𝜎= 0.5 1532 1531 44.5 46.6
+𝜎= 0.6 1601 1599 41.7 43.8
+𝜎= 0.7 1553 1552 39.6 41.1
+𝜎= 0.8 1740 1739 37.8 39.1
+𝜎= 0.9 1926 1925 34.8 35.9
+𝜎= 1.0 2042 2040 31.9 33
+•For the index Mean Rank, when 𝜎= 0.5, MKGRL-MS (TransE)
+achieves considerable improvement; suitable results are obtained
+for other values of 𝜎as well, which undoubtedly proves the
+effectiveness of MKGRL-MS.
+•For the indicator Hits@10, when 𝜎= 0.1, MKGRL-MS (TransE)
+achieves optimal results. This indicates that a larger value of 𝜎
+leads to a higher degree of MKGRL-MS’s attention to multi-modal
+features; moreover, it becomes easier to overfit the overall model,
+which in turn leads to a drop in Hits@10. Meanwhile, a too small
+value of𝜎can also cause Hits@10 to drop, which results from the
+gradual degradation of MKGRL-MS (TransE) to TransE.
+The effectiveness of MKGRL-MS is unquestionable, which also
+proves that the fusion of multi-modal information can provide a more
+accurate reasoning basis for knowledge-based reasoning based on rep-
+resentation. We also provide a reference value for the value of hyper-
+parameter𝜎, as suggested in Section 4.3.Information Fusion 88 (2022) 78–85
+85E. Wang et al.
+6. Conclusions and future work
+We use a multi-headed self-attention to fuse the different modal
+information of the entity, and propose that the new entity repre-
+sentation is obtained by adding its semantic relevance representation
+and multi-modal feature representation under a certain weight. We
+experimentally determine the optimal weight (i.e. the value of hyper-
+parameter𝜎). In this manner, we construct the MKGRL-MS model and
+verify its versatility and effectiveness on two existing representation
+learning models and two different datasets. Furthermore, we improve
+the effectiveness of link prediction tasks.
+In the future, MKGRL-MS can be applied to more existing represen-
+tation learning models. Meanwhile, we will try to automatically train
+the optimal value of the hyperparameter 𝜎or explore more multi-modal
+information fusion methods.
+CRediT authorship contribution statement
+Enqiang Wang: Conceptualization, Methodology, Software, Inves-
+tigation, Writing – original draft. Qing Yu: Resources, Writing – review
+& editing. Yelin Chen: Data curation, Visualization. Wushouer Slamu:
+Supervision, Project administration. Xukang Luo: Software, Validation.
+Declaration of competing interest
+The authors declare that they have no known competing finan-
+cial interests or personal relationships that could have appeared to
+influence the work reported in this paper.
+Acknowledgements
+This work is supported by the National Natural Science Foundation
+of China (61562082) and the Joint Funds of the National Natural
+Science Foundation of China (U1603262). We thank all anonymous
+commenters for their constructive comments.
+References
+[1] R. Kadlec, O. Bajgar, J. Kleindienst, Knowledge base completion: Baselines strike
+back, 2017, http://dx.doi.org/10.18653/v1/w17-2609.
+[2] Z. Wang, J. Zhang, J. Feng, Z. Chen, Know1edge graph embedling by trans-
+lating on hyperplanes, in: Proceedings of the National Conference on Artificial
+Intelligence. Vol. 2, 2014.
+[3] Y. Lin, Z. Liu, M. Sun, Y. Liu, X. Zhu, Learning entity and relation embeddings
+for knowledge graph completion, in: Proceedings of the National Conference on
+Artificial Intelligence. Vol. 3, 2015.
+[4] F.M. Suchanek, S. Abiteboul, P. Senellart, PARIS: Probabilistic alignment of
+relations, instances, and schema, Proc. VLDB Endow. 5 (2011) http://dx.doi.
+org/10.14778/2078331.2078332.
+[5] Y. Liu, H. Li, A. Garcia-Duran, M. Niepert, D. Onoro-Rubio, D.S. Rosenblum,
+MMKG: Multi-modal knowledge graphs, in: Lecture Notes in Computer Science,
+Including Subseries Lecture Notes in Artificial Intelligence and Lecture Notes
+in Bioinformatics, in: 11503 LNCS, 2019, http://dx.doi.org/10.1007/978-3-030-
+21348-0_30.[6] A. Bordes, N. Usunier, A. Garcia-Durán, J. Weston, O. Yakhnenko, Translating
+embeddings for modeling multi-relational data,
+
+--- Chunk 2 ---
+We build a Chinese character relationship knowledge graph
+(CCR), which integrates the images and text descriptions corre-
+sponding to the entities. At the same time, we start from some
+characteristics of the dataset itself and analyse the influence of
+the dataset’s structure on the experimental results.
+•The new entity representation is obtained by adding the semantic
+relevance representation of the entity and its multi-modal fea-
+ture representation of the entity under a certain weight. In this
+manner, we obtain better entity embedding. That is, we exploit
+the multi-modal information of entities to enrich their feature
+representations, which in turn improves the effectiveness of link
+prediction.
+•We successfully combine MKGRL-MS with two existing knowl-
+edge representation models and train MKGRL-MS on two differ-
+ent datasets. The experimental results verify the versatility and
+effectiveness of MKGRL-MS.
+The remainder of this paper is organised as follows. Section 2
+surveys the related work. Section 3 introduces the preliminary concepts
+used in this paper. Section 4 presents the MKGRL-MS model, and
+Section 5 presents the experimental results. Section 6 concludes this
+paper.
+2. Related work
+In this section, we introduce existing papers related to our research,
+including MKGs and representation learning.
+2.1. MKG
+As for MKGs, there are two problems worth studying. A key problem
+is how to build an MKG and the other is how to combine multi-modal
+information to support the realisation of target tasks. Note that we do
+not divide MKGs into two categories. On the contrary, these two key
+issues are often complementary to each other. The reason for doing
+so is to make the focus of the research more clearly understandable.
+From these two perspectives, some corresponding research has been
+conducted.
+2.1.1. Construction of MKGs
+At present, there are two methods of constructing an MKG. One
+method is to construct KGs under different modalities and then use
+ontology matching [ 4] or other methods to perform KG fusion. ThisInformation Fusion 88 (2022) 78–85
+80E. Wang et al.
+was mainly carried out by Liu [5], who proposed MKGs [5] for the first
+time. MKG is mainly used to perform relational reasoning by combining
+different entities and images in different KGs. It is a collection of three
+KGs containing the digital features and (linked to) images of all entities,
+as well as the entity alignment between the KGs. Liu [5] selected the
+FREEBASE-15K [6] dataset (FB15K), which has been widely used in
+the KG complementation literature, as the starting point for creating
+an MKG. At the same time, they created versions of DBpedia [7] and
+YAGO, called DBpedia-15K (DB15K) and YAGO15K, respectively, by
+aligning the entities in FB15K with those in other KGs. Taking DB15K
+as an example, they extracted the alignment between FB15K and DB-
+pedia entities and linked the alignment entities in FB15K and DBpedia
+through the (sameAs) relationship. In addition, they generated the
+corresponding text-image relationship by obtaining the image entities
+of the corresponding text entities from the three major search engines.
+The other method for constructing an MKG is to expand the existing
+KG into an MKG. A representative method was proposed by Wang [8],
+who successfully constructed the Richpedia KG. They were also the first
+to provide comprehensive visual relational resources for general KGs.
+As a result, they formed a large-scale and high-quality MKG dataset,
+which provides a wider range of data for semantic web and computer
+vision researchers. In particular, to extract the relationship between
+image entities, they first indicated that it is often difficult to directly
+detect the semantic relationship based on the pixel features of an image.
+Secondly, they used the rule-based relationship extraction technology,
+with the help of the hyperlink information in the Wikipedia image
+description, to associate the text modality with the image modality to
+generate the multi-modal semantic relationship between image entities
+and set up resource description framework (RDF) links between them.
+2.1.2. Multi-modal information fusion
+For achieving different mission goals, various models have been
+proposed for fusing multi-modal information. For example, Moon [9]
+built a hybrid model that uses multi-modal information for named
+entity disambiguation. To fuse information in different modalities, they
+first used a convolutional neural network (CNN) [10] and long short-
+term memory (LSTM) [11] to extract features of images and texts
+and then used simple attention to complete the fusion of multi-modal
+information.
+Zhang [12] proposed multi-modal knowledge-aware event memory
+network (MKN), which treats word embedding, visual embedding, and
+knowledge embedding as multiple stacked channels (like a colour
+image with three channels) while maintaining their alignment rela-
+tionships to generate the post representation. MKN uses multi-modal
+content information and the connection of external knowledge levels
+to achieve accurate rumour detection. Thus, their multi-modal infor-
+mation fusion method involved stacking the information of different
+modalities into the same CNN input layer.
+The most worthy of our attention is the MKG attention network
+(MKGAT) proposed by Sun [13], which uses multi-modal knowledge
+to improve the recommendation effect of the recommendation system.
+The MKGAT model comprises two sub-modules: MKG embedding mod-
+ule and recommendation module. The MKG embedding module takes
+the collaborative KG as input and uses the MKG entity encoder and
+MKG attention layer to learn a new entity representation for each
+entity. In particular, the author embedded the entities or relationships
+of structured knowledge, embedded images with ResNet [14], trained
+word vectors with Word2Vec [15], and then applied the SIF model [16]
+to obtain the weighted average of the word vectors of the sentence,
+which was used as the sentence vector to represent the text feature.
+In the attention layer of MKG, they designed a propagation layer and
+an aggregation layer. They proposed two methods, add aggregation
+method and concatenation aggregation method, to fuse the information
+of different modalities. The new entity aggregated information about
+its neighbours while retaining information about itself. Then, the new
+entity representation was used to learn the KG embedding to express
+the knowledge reasoning relationship.2.2. Representation learning
+The main purpose of KG-based representation learning is knowledge
+reasoning (i.e. to infer unknown facts or relationships based on the
+facts or relationships present in the graph); it generally focuses on the
+following three aspects: feature information of entities, relationships,
+and graph structure. According to the different reasoning elements,
+knowledge reasoning can be divided into the following categories: rea-
+soning based on the graph structure, reasoning based on rule learning
+and reasoning based on representation learning. Of these, reasoning
+based on representation learning can automatically capture the features
+required for reasoning, without the need to indicate the reasoning steps.
+Therefore, it has been relatively extensively studied in recent years.
+The traditional KG representation learning technology has received
+widespread attention from the Word2Vec language learning model
+proposed by Mikolov [15]. They found that the word vector expres-
+sion trained by this language model exhibits translation invariance.
+Inspired by this model, Bordes [6] designed the TransE model, using
+the modelling assumption of ℎ+𝑟≈𝑡to realise the reasoning of the rela-
+tionship between entities. The modelling is simple, feasible, and highly
+efficient and has become the mainstream technology used by scholars
+at home and abroad to study representation learning. However, the
+relationship types in the KG, such as ‘one-to-many’ and ‘many-to-one’
+are usually complex and cannot be accurately represented by TransE.
+Some other authors attempted to address this problem. Wang [2]
+proposed the TransH model, which maps entities to the hyperplane of
+the corresponding relation 𝑟and then uses the sum method to realise
+semantic synthesis mapping. This model effectively solves the one-to-
+many and many-to-many problems, but the premise is that the entities
+and relationships need to be in the same representation space; thus,
+the representation results are limited. Lin [3] proposed the TransR
+model based on the design ideas of TransE and TransH. In this model,
+the vector expression of entities and relationships is changed without
+changing the operation mode of the semantic synthesis. This model
+maps entities and relationships into different vector spaces, and then
+performs semantic synthesis.
+In addition to the representation learning model based on transla-
+tion hypotheses (derivative models represented by TransE), models that
+act on other hypothesis spaces have also been proposed. For example,
+
+
+--- Chunk 3 ---
+
+this will affect the accuracy of evaluating the model’s effective-
+ness. Therefore, we can consider removing such negative triplets
+from the training, validation, and test sets to ensure the fairnessInformation Fusion 88 (2022) 78–85
+83E. Wang et al.
+of the evaluation. The evaluation without the above filtering
+operation is called Raw, and that with the filtering operation is
+called Filter or Filt.
+b Baselines
+We set up two baselines to verify the versatility and effectiveness
+of the MKGRL-MS model.
+•The first baseline is two existing representation learning
+models, namely TransE and TransH. We fuse these two
+models with MKGRL-MS and compare the experimental
+results before and after the fusion. The main purpose is
+to preliminarily verify the versatility and effectiveness of
+the MKGRL-MS model. Although the effects of TransE and
+TransH are not the best among the current models, the
+modelling framework of the MKGRL-MS model determines
+its good integration. Therefore, MKGRL-MS can also be
+integrated with other existing translation models, such as
+TransR. We experimentally verify the effectiveness of the
+MKGRL-MS model based on TransE and TransH. In partic-
+ular, for MKGRL-MS, we do not set the hyperparameter 𝜎;
+that is, we always guarantee 𝜎= 1.
+•The second baseline is the hyperparameter 𝜎under differ-
+ent values. We compare the experimental effects of 𝜎under
+different values to verify that it influences the effectiveness
+of the MKGRL-MS model. In particular, 𝜎= 0and𝜎= 1are
+our baselines. Based on this, we set 𝜎= 0.1⋯⋯𝜎= 0.9
+to train the MKGRL-MS model, and thus, determine the
+optimal value of 𝜎.
+c Parameter settings
+We set some parameters that remain constant throughout the
+experiment (e.g entityDimension = relationDimension = hidden-
+size = 100, numOfEpochs = 1000, learningRate = 0.01, weight-
+decay = 0.001, norm = 2, num-attention-heads = 2, hidden-
+dropout-prob = 0.5, patience = 10 and earlyStopPatience = 5).
+Here, patience = 10 means that in the validation set, the model
+effectiveness has not improved for 10 consecutive times. We
+change learningRate and weight-decay, and earlyStopPatience
+= 5 means that when the number of times learningRate and
+weight-decay are changed exceeds 5, the model stops training
+and results in output learning. In addition, the optimiser we use
+is stochastic gradient descent (SGD), the size of the multimodal
+feature matrix is (numOfEntity ×4×50), the number of rows
+of theℎ∗(orℎ∗) matrix is 4, and the number of columns is 50.
+In addition, for tasks based on the first baseline, we set numOf-
+Batches = 100 for FB15K and numOfBatches = 45 for CCR. As
+the entities in CCR correspond to the real-world entities, we can
+construct the corresponding multi-modal feature matrix for CCR.
+For FB15K, because the entity data are not a specific real entity,
+we simulate its multi-modal feature matrix (i.e. the intercepting
+part of the multi-modal feature matrix based on CCR acts on
+FB15K). We do not deliberately train TransE and TransH to
+achieve optimal results. This is because we only need to compare
+the difference between the results obtained before and after the
+fusion of MKGRL-MS.
+For tasks based on the second baseline, as we perform the
+verification only on the CCR dataset, we keep numOfBatches =
+45 throughout the process while varying the hyperparameters 𝜎.
+5.3. Experimental results
+We explain the experimental results from two aspects: versatility
+and effectiveness of MKGRL-MS and the optimal value of the hyperpa-
+rameters𝜎. These corresponds to the first baseline and second baseline,
+respectively.5.3.1. Versatility and effectiveness of MKGRL-MS
+We conduct preliminary experiments on the two datasets FB15K and
+CCR. The experimental results are shown in Table 2.
+First, we point out that MKGRL-MS (TransE) is TransE after being
+merged with MKGRL-MS, and MKGRL-MS (TransH) is TransH after
+being merged with MKGRL-MS. Next, we can see that MKGRL-MS
+(TransE) and MKGRL-MS (TransH) have a certain degree of decline on
+the two datasets on the indicator Mean Rank, which exhibit better ef-
+fectiveness than the existing model. This also preliminarily confirms the
+versatility and effectiveness of MKGRL-MS. In addition, the following
+two points need to be noted:
+•For the CCR dataset, the results obtained from Filt are not sub-
+stantially different from those obtained from Raw, which means
+that the improvement is not evident. In terms of the FB15K
+dataset, Filt and Raw can be clearly distinguished, and the im-
+provement is more evident.
+•On these two datasets, both MKGRL-MS (TransE) and MKGRL-MS
+(TransH) have different degrees of decline in the index Hits@10.
+More experiments need to be conducted to determine the reason
+behind this.
+We assume that the phenomenon in the first point is caused by
+some characteristics of the dataset itself. Thus, we conducted a detailed
+analysis on the datasets FB15K and CCR. First, the essence of the Filt
+operation is to remove the positive triplets from the negative triplets.
+According to our hypothesis, in the CCR test set, the constructed
+negative triplets only contain a few positive triplets; that is, the ‘many’
+in (one-to-many)-type triplets is not too large in the training set.
+Broadly speaking (the number of relationships is generally not too
+large; for simplicity, we do not consider the impact of the number of
+relationships), the smaller the E/T of a data set (E/T = the number
+of entities/size of the training set), the greater the ‘many’ in (one-to-
+many)-type triplets in the training set. Furthermore, the effect after
+the Filt operation is more evident. Table 3 shows that the size of the
+FB15K training set is 4,83,142, and the number of entities is 14,951. In
+addition, the size of the CCR training set is 86,679, and the number of
+entities is 71,234. CCR’s E/T=0.82, E/T=0.03. The E/T of CCR is much
+larger than that of FB15K, which indicates that on the CCR dataset, the
+difference between the result of Filt and that of Raw is not evident.
+We assume that this phenomenon described in the second point is
+caused by the overfitting of MKGRL-MS. First, according to the defini-
+tion of Hits@10, Hits@10 has stricter requirements on the experimental
+results. In other words, during the test, if the ranking of some positive
+triplets has not improved to the top 10 even if their rankings have im-
+proved, then the evident result is that Hits@10 will not change much.
+At the same time, the Mean Rank indicator does not have too strict
+requirements on the experimental results. When the overall ranking
+of positive triplets changes, Mean Rank can capture this. Therefore,
+compared to Hits@10, the change in Mean Rank is more evident.
+Second, we analyse the possible causes of the phenomenon described
+in the second point. Simply put, this phenomenon is likely to be caused
+by MKGRL-MS’s excessive attention to multi-modal features, which
+can result in some positive triplets ranking in the top 10 to learn too
+much multi-modal feature information. As a result, the ranking of these
+positive triplets decreases; however, this decrease only drops out of
+the top 10. Therefore, when the degree of overfitting of MKGRL-MS
+overfitting is higher, Hits@10 decreases. Meanwhile, because the Mean
+Rank index does not have too strict requirements on the experimental
+results, as long as the degree of model overfitting is not large, the value
+of Mean Rank remains unaffected. From this viewpoint, Hits@10 can
+also reflect the degree of overfitting of the model to a certain extent.
+5.3.2. Optimal value of 𝜎
+In this section, we will first explain some of the reasons for intro-
+ducing the
+
+--- Chunk 4 ---
+ based on the design ideas of TransE and TransH. In this model,
+the vector expression of entities and relationships is changed without
+changing the operation mode of the semantic synthesis. This model
+maps entities and relationships into different vector spaces, and then
+performs semantic synthesis.
+In addition to the representation learning model based on transla-
+tion hypotheses (derivative models represented by TransE), models that
+act on other hypothesis spaces have also been proposed. For example,
+DistMult [17] adopts a more flexible linear mapping assumption to
+represent entities as vectors and relationships as matrices, and treats
+relationships as a linear transformation in a vector space. For a positive
+triplet (ℎ,𝑟,𝑡 ), the formula ℎ𝑀𝑟=𝑡holds. However, a more evident
+problem in DistMult is that the design of the score function makes it
+default that all relationships are symmetrical when the relationship is
+designed as a diagonal matrix. Because for a positive triplet (ℎ,𝑟,𝑡 )after
+model training, the value of 𝑓(ℎ,𝑟,𝑡 )=ℎ𝐷𝑟𝑡𝑇becomes relatively large,
+this means that the value of the score 𝑓(𝑡,𝑟,ℎ )=𝑡𝐷𝑟ℎ𝑇of triplets
+(𝑡,𝑟,ℎ )will also be relatively large, because 𝑡𝐷𝑟ℎ𝑇=ℎ𝐷𝑟𝑡𝑇. This shows
+that DistMult naturally assumes that all relationships are symmetrical,
+which is evidently unreasonable. CompIEx [18] extends the original
+representation learning based on real numbers to that based on complex
+numbers, because multiplication based on complex numbers does not
+satisfy the commutative law, thus overcoming the problem of DistMult
+not being able to represent asymmetric relationships well. In addi-
+tion to the above-mentioned representation learning methods, many
+other methods, such as pure neural network methods NTN [19] and
+ConvE [20], have also been proposed.
+3. Formulation
+In this section, we introduce a set of preliminary concepts, and then
+formulate the task of Link prediction based MKGs.Information Fusion 88 (2022) 78–85
+81E. Wang et al.
+3.1. Traditional KGs
+A traditional KG, which can be expressed as 𝐺=(𝑉,𝐸), is a direct
+graph, where 𝑉denotes the node set and 𝐸denotes the edge set. The
+nodes are entities and edges are subject-property-object triple facts.
+Each edge belongs to a relation type 𝑟∈𝑅, where𝑅is a set of relation
+types. Each edge in the form of (head entity, relation, tail entity)
+(denoted as (ℎ,𝑟,𝑡 ), whereℎ,𝑡∈𝑉,𝑟∈𝑅) indicates a relationship of 𝑅
+from head entity ℎto tail entity 𝑡.
+3.2. MKGs
+According to our explanation in Section 2.1.1, in previous studies,
+MKGs did not have a unified definition; thus, this paper defines an
+MKG as follows: 𝑀𝐾𝐺 =(𝑉,𝐸,𝐼,𝑇,𝑂 ), where the definitions of 𝑉
+and𝐸are the same as those in traditional KGs, 𝐼is the set of images
+corresponding to all entities, 𝑇is the set of texts corresponding to all
+entities in𝐸,𝑂is some other modal information to be expanded. There
+are traditional triplets (ℎ,𝑟,𝑡 )in an MKG, which is also the most basic
+structure of MKGs. On this basis, MKGs can contain triplets of the form
+similar to (entity, image of, image), or use some non-triplet methods to
+store multi-modal information.
+3.3. Task description
+Now, we will describe the input and output of MKGRL-MS on the
+link prediction task:
+•Input: One of the inputs is traditional KGs or MKGs. In addition,
+there is a unique input of MKGRL-MS (i.e. that is, the multi-modal
+feature matrix of each entity).
+•Output: The trained entities and relations embedding is the main
+output of MKGRL-MS. in addition, another output is the self-
+attention weight of multi-modal features for the whole KGs, but
+this is not a necessary output.
+4. Method
+In this section, we will elaborate on our proposed MKGRL-MS
+model. As shown in Fig. 2, MKGRL-MS is mainly composed of three sub-
+modules: multi-modal feature encoding of entities, feature fusion based
+on multi-headed self-attention, and translation model. The upper left
+part indicates the feature matrix coding of entities, the lower left part
+indicates the feature fusion based on multi-headed self-attention, and
+the right part indicates the translation model. Next, we will introduce
+these three sub-modules in detail.
+4.1. Feature matrix coding of entities
+To obtain the feature matrix of the entities, we first need to encode
+their different modal eigenvectors. We use different encoders for images
+and texts, as follows:
+•Images: For image encoding, we use Resnet50 to extract the image
+features. First, we unify the size of the images, and then adjust the
+last fully connected layer of Resnet50 (i.e. discard the Softmax
+in the last layer). Finally, each image is output via Resnet50 to
+obtain the eigenvector of each image.
+•Texts: For texts encoding, we use the pre-trained language models
+RoBERTa-wwm-ext [21], a Chinese BRET [22] language model
+released by the Joint Laboratory of HIT and iFLYTEK Research
+(HFL). This pre -trained models use RoBERTa similar methods,
+such as dynamic mask and more training data. In many tasks, this
+model exhibits better effectiveness than bert-base-chinese.Through the above operations, we extract the eigenvectors of image
+and text description. At the same time, to reduce the training overhead
+and a certain degree of noise, we conduct PCA processing on the
+eigenvectors of images and texts. Finally, we splice the processed
+eigenvectors into a feature matrix of the entities. This feature matrix
+does not fundamentally integrate the features of different modals.
+4.2. Feature fusion based on multi-headed self-attention
+The multi-modal feature of an entity is not a simple splicing of
+different modal features. In particular, when constructing the relation-
+ship between different entities (i.e. semantic synthesis), the entities
+in a positive triplet often have different degrees of attention to its
+different modal characteristics. Therefore, we introduce multi- headed
+self-attention [23], which can make the features of different modals
+affect each other and fuse the multi-modal information to a certain
+extent. As shown in Eq. (1), the MKGRL-MS model learns the Query-
+Matrix, Key-Matrix, and Value-Matrix, which act on the whole KGs.
+𝑉∗=𝑊𝑣⋅ℎ∗⋅𝑠𝑜𝑓𝑡max((𝑊𝑘⋅ℎ∗)𝑇⋅𝑊𝑞⋅ℎ∗
+√
+𝐷𝑘)
+(1)
+whereℎ∗(or𝑡∗) is the multi-modal feature matrix obtained after
+multi-modal feature encoding of entities, 𝑊𝑞is Query-Matrix, 𝑊𝑘is
+Key-Matrix, 𝑊𝑣is Value-Matrix, and 𝑉∗is the multi-modal feature
+matrix processed by multi-headed self-attention.
+Finally, we use a mean function to further integrate the multi-modal
+information. In particular, we convert the learned multi-modal feature
+matrix into a multi-modal feature vector. The dimensions of this vector
+are the same as the semantic relevance representation of the entity. The
+formal expression is shown in Eq. (2):
+𝑉=∑𝑛
+𝑛=1(
+
+--- Chunk 5 ---
+ multi-headed self-attention.
+Finally, we use a mean function to further integrate the multi-modal
+information. In particular, we convert the learned multi-modal feature
+matrix into a multi-modal feature vector. The dimensions of this vector
+are the same as the semantic relevance representation of the entity. The
+formal expression is shown in Eq. (2):
+𝑉=∑𝑛
+𝑛=1(𝑉∗
+𝑛)
+𝑛(2)
+where𝑉is the multi-modal feature vector corresponding to the entity,
+𝑛is the number of single-modal feature vectors, and 𝑉∗
+𝑛is the division
+of𝑉∗.
+4.3. Translation model
+After feature fusion through multi-headed self-attention, we further
+propose a new entity embedding as the sum of the semantic relevance
+representation of entities and the multi-modal feature representation of
+entities under a certain weight, where the entity’s multi-modal feature
+is represented as 𝑉in Eq. (2) and the semantic relevance of the entity
+is the traditional knowledge representation.
+In particular, we use a common scoring function to train KGs based
+on TransE. As shown in Eq. (3), when a triple (ℎ,𝑟,𝑡 )is correct, we
+can learn the embedding of each entity and relationships through
+continuous optimisation (i.e. ℎ+𝑟≈𝑡).
+𝑠𝑐𝑜𝑟𝑒 (ℎ,𝑟,𝑡 )=‖ℎ+𝑟−𝑡‖2
+2(3)
+On this basis, the embedding of ℎand𝑡learned by MKGRL-MS is
+the sum of the semantic relevance representation of entities and their
+multi-modal feature representation under a certain weight; thus, the
+scoring function is transformed into the form of Eq. (4).
+𝑠𝑐𝑜𝑟𝑒 (ℎ,𝑟,𝑡 )=‖‖‖ℎ−𝜎(𝑉ℎ)+𝑟−(𝑡−𝜎(𝑉𝑡))‖‖‖2
+2(4)
+where𝑉ℎand𝑉𝑡are single examples of 𝑉. In addition, 𝜎is a hyperpa-
+rameter that reflects the importance of 𝑉. We recommend 0<𝜎≤0.5,
+and we will elaborate on this point in Section 5.3.2. The above Eq. (4)
+clearly indicates that MKGRL-MS degenerates into TransE when 𝜎= 0.
+Furthermore, if MKGRL-MS is integrated with TransH, the scoring
+function has the form of Eq. (5).
+𝑠𝑐𝑜𝑟𝑒 (ℎ,𝑟,𝑡 )=‖‖‖ℎ−𝜎(𝑉ℎ)−𝑤𝑟𝑇(ℎ−𝜎(𝑉ℎ))𝑤𝑟Information Fusion 88 (2022) 78–85
+82E. Wang et al.
+Fig. 2. Overview of the MKGRL-MS model’s framework.
+Table 1
+Statistics of datasets.
+Datasets FB15K CCR
+Entities 14 951 71 234
+Relationships 1345 102
+Train 483 142 86 679
+Valid 50 000 5235
+Test 59 071 5221
+Text NONE 49 475
+Image NONE 186 886
++𝑟−(𝑡−𝜎(𝑉𝑡)−𝑤𝑟𝑇(𝑡−𝜎(𝑉𝑡))𝑤𝑟)‖‖‖2
+2(5)
+where𝑤𝑟is the normal vector of the hyperplane.
+The embedding of the whole KG is trained by the relative distance
+between the scores of positive triplets and negative triplets. The specific
+loss function still follows TransE, i.e. Eq. (6):
+𝑙𝑜𝑠𝑠=∑
+(ℎ,𝑟,𝑡)∈𝑆∑
+(ℎ′,𝑟,𝑡′)∈𝑆′[𝛾+𝑠𝑐𝑜𝑟𝑒 (ℎ,𝑟,𝑡 )−𝑠𝑐𝑜𝑟𝑒(ℎ′,𝑟,𝑡′)](6)
+where𝑆is a set of positive triplets and 𝑆′is a set of negative triplets.
+Each negative triplet is constructed by replacing one entity in a positive
+triplet randomly (i.e. 𝑆′={(ℎ′,𝑟,𝑡)|ℎ′∈𝐸}∪{(ℎ,𝑟,𝑡′)|𝑡′∈𝐸}).
+5. Experiments
+In this section, we evaluate the MKGRL-MST model using two
+datasets . We first present our datasets in Section 5.1 and then elab-
+orate on the experimental setup in Section 5.2. Next, we discuss the
+experimental results in Section 5.3. The source code of this paper can
+be obtained from .
+5.1. Datasets
+We validate the proposed model on two datasets: FB15K and CCR.
+•FB15K
+FB15K was constructed based on Freebase by Antoine Bordes and
+is a typical dataset used by the knowledge representation learning
+model. It contains 14,951 entities, 1,345 relationships, 4,83,142
+for train, 50,000 for valid, and 59,071 for tests.•CCR
+CCR is extracted and generated from the Person Graph Data
+Set, which contains approximately 10,000 person2person rela-
+tionship facts that are built using the extraction method, which
+can be applied to person KG search and inference applications.
+The Person Graph Data Set contains 97,158 pieces of person
+relationship data, involving 71,243 persons, 102 big-category
+relationships, and 266 small-category relationships. We delete
+the small-category relationships and deal with a few entities and
+triplets that are duplicated due to coding errors. At the same time,
+we generate 186,886 images and 49,475 text descriptions for each
+entity based on BaiduBaike and BaiduPictures. The statistics of
+the two datasets are shown in Table 1.
+5.2. Experimental setup
+a Evaluation protocol
+In the field of knowledge representation learning, link prediction
+is widely used to evaluate the effectiveness of the model. In the
+link prediction task, we need to replace the head entity (ℎ)or
+tail entity (𝑡)of each triplet in the test set with all entities in
+the dictionary. These replaced triplets are called negative triplets
+(i.e. corrupted triplets). Then, we score these negative triplets
+through the model’s scoring function and arrange them in de-
+scending order. The higher the ranking of the triplets composed
+of the correct entity, the stronger is the model’s ability to predict
+the entity.
+For link prediction tasks, there are mainly two evaluation indi-
+cators, Mean Rank and Hits@10. After completing the scoring
+ranking, we identify the positive triplets and determine their
+rank. The average rank of all correct triplets in the entire test set
+is used as the Mean Rank. And Hits@10 refers to the probability
+of the positive triplets being ranked in the top 10 (i.e. the
+number of all top ten examples in the entire test set divided by
+the total).
+When constructing negative triplets based on the test set, some
+constructed triplets belong to this KG; thus, it is reasonable to
+state that the scores of such triplets are ranked higher. However,
+this will affect the accuracy of evaluating the model’s effective-
+ness. Therefore, we can consider removing such negative triplets
+from the training, validation, and test sets to ensure the fairnessInformation Fusion 88 (2022) 78–85
+83E. Wang et al.
+of the evaluation. The evaluation without the above filtering
+operation is called Raw, and that with the filtering operation is
+called Filter or Filt.
+b Baselines
+We set up two
+
+

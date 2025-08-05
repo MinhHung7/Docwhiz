@@ -1,0 +1,136 @@
+.file-storage {
+  height: 50%;
+  background-color: #22262b;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+
+  /* Thêm flexbox để kiểm soát layout */
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 0px;
+}
+
+.add-file-btn {
+  display: flex;
+  align-items: center; /* Canh giữa theo chiều dọc */
+  justify-content: center; /* Canh giữa theo chiều ngang */
+  gap: 8px; /* Khoảng cách giữa icon và text */
+  background-color: #393943;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  margin-bottom: 1px;
+  width: 100%;
+  font-size: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+.add-file-icon {
+  font-size: 25px; /* điều chỉnh kích thước icon */
+}
+
+.add-file-btn:hover {
+  background-color: #2f3338;
+  transform: translateY(-2px);
+}
+
+.add-file-btn:active {
+  transform: scale(0.98);
+  background-color: #2f3338;
+}
+
+.file-title {
+  display: flex;
+  align-items: center;
+  /* margin: 12px 0 8px; */
+  gap: 6px;
+  font-family: sans-serif;
+  color: #ddd;
+}
+
+.pdf-icon {
+  font-size: 18px;
+}
+
+/* Container bao quanh file-list để nó có thể expand */
+.file-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0; /* Quan trọng để cho phép shrinking */
+}
+
+.file-list {
+  display: flex;
+  flex-direction: column;
+  flex: 0.9; /* Chiếm toàn bộ không gian còn lại */
+  overflow-y: auto; /* nếu nội dung quá nhiều thì scroll */
+  min-height: 50px;
+}
+
+.file-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.file-list::-webkit-scrollbar-thumb {
+  background-color: rgba(217, 217, 217, 0.2);
+  border-radius: 4px;
+}
+
+.file-btn {
+  background-color: transparent;
+  border: none;
+  border-radius: 10px;
+  padding: 11px;
+  color: white;
+  font-size: 15px;
+  text-align: left;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 0;
+}
+
+.file-btn:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.button-row {
+  display: flex;
+  gap: 5px;
+  justify-content: flex-start; /* hoặc center/right tùy layout */
+}
+
+.add-note-btn,
+.add-mindmap-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 8px;
+  background-color: #2f3338;
+  border: 1px solid #444;
+  color: #f0f0f0;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.add-note-btn:hover,
+.add-mindmap-btn:hover {
+  background-color: #3c4045;
+  transform: translateY(-2px);
+}
+
+.add-note-icon,
+.add-mindmap-icon {
+  font-size: 17px;
+  color: #f0f0f0;
+}
